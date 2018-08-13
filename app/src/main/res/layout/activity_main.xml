@@ -15,7 +15,7 @@
             android:id="@+id/pager_tap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity = "bottom">
+            android:layout_gravity = "top">
         </android.support.v4.view.PagerTabStrip>
 
     </android.support.v4.view.ViewPager>
