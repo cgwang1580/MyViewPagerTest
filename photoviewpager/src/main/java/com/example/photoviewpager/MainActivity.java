@@ -26,7 +26,40 @@ public class MainActivity extends AppCompatActivity {
 
         mPhotoPagerAdapter = new PhotoPagerAdapter (mPhotoId);
         mPhotoViewPager = findViewById (R.id.view_pager);
+
+        mPhotoViewPager.setPageMargin (40);
+        mPhotoViewPager.setOffscreenPageLimit (3);
         mPhotoViewPager.setAdapter (mPhotoPagerAdapter);
+
+        AlphaPageTransformer alphaPageTransformer = new AlphaPageTransformer ();
+        mPhotoViewPager.setPageTransformer (false, alphaPageTransformer);
+
+    }
+
+    public class AlphaPageTransformer implements ViewPager.PageTransformer{
+
+        public static final float DEFAULT_MIN_ALPHA = 0.5f;
+        public float mMinAlpha = DEFAULT_MIN_ALPHA;
+
+        public AlphaPageTransformer(){
+
+        }
+
+        @Override
+        public void transformPage(@NonNull View view, float v) {
+
+            if(v < -1){
+                view.setAlpha (DEFAULT_MIN_ALPHA);
+            }else if(v < 0){
+                mMinAlpha = DEFAULT_MIN_ALPHA + (1 + v) * DEFAULT_MIN_ALPHA;
+                view.setAlpha (mMinAlpha);
+            }else if(v < 1){
+                mMinAlpha = DEFAULT_MIN_ALPHA + (1 - v) * DEFAULT_MIN_ALPHA;
+                view.setAlpha (mMinAlpha);
+            }else{
+                view.setAlpha (DEFAULT_MIN_ALPHA);
+            }
+        }
 
     }
 
