@@ -38,8 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
     public class AlphaPageTransformer implements ViewPager.PageTransformer{
 
-        public static final float DEFAULT_MIN_ALPHA = 0.5f;
-        public float mMinAlpha = DEFAULT_MIN_ALPHA;
+        /*public static final float DEFAULT_MIN_ALPHA = 0.5f;
+        public float mMinAlpha = DEFAULT_MIN_ALPHA;*/
+
+        public static final float DEFAULT_MAX_ROTATE = 15.0f;
+        public float mMaxRotate = DEFAULT_MAX_ROTATE;
 
         public AlphaPageTransformer(){
 
@@ -48,17 +51,37 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void transformPage(@NonNull View view, float v) {
 
-            if(v < -1){
+            if(v <= -1){
+                view.setRotation (-1 * mMaxRotate);
+                view.setPivotX (view.getWidth ());
+                view.setPivotY (view.getHeight ());
+            }else if(v <= 0){
+                //v: 0 to -1 position: (0.5 to 0) * getWidth()
+                view.setPivotX (view.getWidth () * (-0.5f * v + 0.5f));
+                view.setPivotY (view.getHeight ());
+                view.setRotation (v * mMaxRotate);
+            }else if (v <= 1){
+                //v: 0 to 1 position: (0.5 to 1) * getWidth() linear function
+                view.setPivotX (view.getWidth () * (-0.5f * v + 0.5f));
+                view.setPivotY (view.getHeight ());
+                view.setRotation (v * mMaxRotate);
+            }else{
+                view.setRotation (mMaxRotate);
+                view.setPivotX (0);
+                view.setPivotY (view.getHeight ());
+            }
+
+            /*if(v <= -1){
                 view.setAlpha (DEFAULT_MIN_ALPHA);
-            }else if(v < 0){
+            }else if(v <= 0){
                 mMinAlpha = DEFAULT_MIN_ALPHA + (1 + v) * DEFAULT_MIN_ALPHA;
                 view.setAlpha (mMinAlpha);
-            }else if(v < 1){
+            }else if(v <= 1){
                 mMinAlpha = DEFAULT_MIN_ALPHA + (1 - v) * DEFAULT_MIN_ALPHA;
                 view.setAlpha (mMinAlpha);
             }else{
                 view.setAlpha (DEFAULT_MIN_ALPHA);
-            }
+            }*/
         }
 
     }
