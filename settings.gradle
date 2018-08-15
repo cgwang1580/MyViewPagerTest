@@ -1,1 +1,1 @@
-include ':app', ':photoviewpager'
+include ':app', ':photoviewpager', ':viewpageropensource'
