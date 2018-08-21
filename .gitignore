@@ -13,3 +13,8 @@
 /captures
 .externalNativeBuild
 !/app/
+ViewPagerTransform/
+app/libs/
+photoviewpager/libs/
+ta
+viewpageropensource/libs/
