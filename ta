@@ -1,0 +1,29 @@
+[33mcommit 609b46872f8b6ee0cbb0f9828728e6bdfa679a05[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: cgwang1580 <cgwang1580@gmail.com>
+Date:   Tue Aug 14 13:56:52 2018 +0800
+
+    添加三张图片，设置简单的viewpager效果
+
+[33mcommit 9ef81965048f94594f0de3464e19527bb56b0f0c[m[33m ([m[1;31mMyViewPagerTest/master[m[33m)[m
+Author: cgwang1580 <cgwang1580@gmail.com>
+Date:   Tue Aug 14 10:11:12 2018 +0800
+
+    New module for image ViewPager test
+
+[33mcommit 83435caabf4aa519a6815300d6ac32ce45bee732[m
+Author: cgwang1580 <cgwang1580@gmail.com>
+Date:   Mon Aug 13 16:46:08 2018 +0800
+
+    Change pager title from bottom to top
+
+[33mcommit a17887db4de3f3a19b6c4a21dd2fd744d69c685e[m
+Author: cgwang1580 <cgwang1580@gmail.com>
+Date:   Mon Aug 13 16:38:02 2018 +0800
+
+    Create README.md
+
+[33mcommit c0d2b9180d303e38f5cd742c8cd606d7ae39b6af[m
+Author: cgwang1580 <cgwang1580@gmail.com>
+Date:   Mon Aug 13 16:34:17 2018 +0800
+
+    First commit, 实现最简单的Viewpager测试实例，三个pager、title

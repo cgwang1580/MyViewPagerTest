@@ -4,6 +4,10 @@
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
+*.class
+*.jar
+*.war
+*.ear
 .DS_Store
 /build
 /captures
